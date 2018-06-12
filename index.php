@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php the_post(); ?> 
 
 <body class="animsition" data-animsition-in-class="fade-in" data-animsition-out-class="fade-out-up">
     <main class="container-fluid">
@@ -68,7 +69,7 @@
                 <section class="about__columnaizquierda col-10 col-md-10 order-2 col-lg-5 order-lg-1 col-xl-6 order-xl-1 justify-content-center align-items-center">
                     <h2 class="titulo-mediano  wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s"><?php the_title(); ?></h2>
                     <article class="about__columnaizquierda__texto wow fadeIn" data-wow-duration="1s" data-wow-delay=".8s">
-                        <?php echo apply_filters('the_content', get_post(2)->post_content); ?>
+                        <?php the_content(); ?> 
                     </article>
                 </section>
                 <!-- ABOUT FIN COLUMNA IZQUIERDA-->
@@ -165,7 +166,7 @@
                         <section class="contact__columnader__info__impor ">
                             <h3 class="contact__columnader__info__impor__tachado ">_Email</h3>
                             <h2 class="titulo-mediano hvr-forward">
-                                <a href="# ">miemail@miemail.com</a>
+                                <a href="# ">alicia.escritos@gmail.com</a>
                             </h2>
                             <h3 class="contact__columnader__info__impor__tachado ">_Mobile</h3>
                             <h2 class="titulo-mediano hvr-forward">
