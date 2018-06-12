@@ -504,9 +504,12 @@ ul.contact__footer__rrss__ul {
   list-style: none;
   padding: 0; 
 }
+.contact__footer__rrss__ul li:first-child {
+  margin-left: 0.71em;
+}
 .contact__footer__rrss__ul li {
   display: inline-block;
-  margin: 0 0.71em 0 0.71em;
+  margin-right: 0.10em;
 }
 .contact__footer__rrss__ul a {
   z-index: 1;

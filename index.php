@@ -66,31 +66,9 @@
             <div class="about__row row justify-content-center align-items-center">
                 <!-- ABOUT COLUMNA IZQUIERDA-->
                 <section class="about__columnaizquierda col-10 col-md-10 order-2 col-lg-5 order-lg-1 col-xl-6 order-xl-1 justify-content-center align-items-center">
-                    <h2 class="titulo-mediano  wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">I enjoy everyday, because I work in what I love</h2>
+                    <h2 class="titulo-mediano  wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s"><?php the_title(); ?></h2>
                     <article class="about__columnaizquierda__texto wow fadeIn" data-wow-duration="1s" data-wow-delay=".8s">
-                        <p>I’m a 24 years old hardworking and passionated webx designer and frontend developer from Spain. I
-                            finished my master in June 2018, so now I’m looking for a job that offers me an opportunity to
-                            develop my skills in this professional field and to learn more about it everyday.</p>
-                        <br>
-                        <p>Before starting my career like a web designer and frontend developer, I built several blogger designs
-                            for some clients. These experiences made me realize I love it and that I needed to change my
-                            career -I was studying to be a Primary teacher- for be a professional of this labor field. I’m
-                            very proud of took that decisition. </p>
-                        <br>
-                        <p class="titulo-pequeño">What can I do?</p>
-                        <br>
-                        <p>As designer, I can create multidispositive wireframes and responsive designs. I can use Axure RP,
-                            Adobe Photoshop, Sketch, Principle and I’m learning Adobe Illustrator and about logo designs
-                            and lettering. Moreover, as frontend developer, I know HTML5, CSS3, Javascript, Flexbox, Grid,
-                            PHP and Wordpress.
-                        </p>
-                        <br>
-                        <p class="titulo-pequeño">A little more about me</p>
-                        <br>
-                        <p>I LOVE reading, writing, the bellydance, yoga and nature. I’ve travelled around Europe and I’ve visited
-                            Norway, UK, France, Italy (where I resided four months), Poland, Portugal… and I hope to travel
-                            around the world one day! I believe in dreams, so I always follow mine and encourage others to
-                            do it too. Ahhh, and I have a blog where I share writing tips :)</p>
+                        <?php echo apply_filters('the_content', get_post(2)->post_content); ?>
                     </article>
                 </section>
                 <!-- ABOUT FIN COLUMNA IZQUIERDA-->
@@ -114,7 +92,6 @@
 
         <!-- WORKS -->
         <?php query_posts( 'cat=proyectos' ); ?>
-
         <a name="works-page"></a>
         <section id="works-page" class="works">
             <div class="row justify-content-center align-items-center">

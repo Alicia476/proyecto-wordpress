@@ -6,16 +6,17 @@
                     </div>
                     <div class="contact__footer__rrss">
                         <ul class="contact__footer__rrss__ul">
-                            <a href="#">
+                        <a href="https://github.com/Alicia476/proyecto">
                                 <li>
-                                    <img src="assets/img/logo-linkedin.svg" alt="">
+                                    <img src="http://portfolio.local/wp-content/uploads/2018/06/github.svg" alt="GitHub">
                                 </li>
                             </a>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/in/alicia-cardete/">
                                 <li>
-                                    <img src="assets/img/wordpress.svg" alt="">
+                                    <img src="http://portfolio.local/wp-content/uploads/2018/06/logo-linkedin.svg" alt="Linkedin">
                                 </li>
                             </a>
+                          
                             <a href="#">
                                 <li>
                                     <img src="assets/img/logo-instagram.svg" alt="">
