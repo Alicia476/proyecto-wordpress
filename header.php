@@ -14,9 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="<?php bloginfo ( 'template_url' ); ?>/css/bootstrap-grid.min.css">
         <title>Portfolio Alicia Cardete</title>
-
         <!-- // Scripts a cargar en el head ?> -->
-       
-
- 
     </head>
+            <!-- LOGO-->
+            <a id="logo-nav" href="#">
+                <img id="logo" src="http://portfolio.local/wp-content/uploads/2018/06/logo2.svg" alt="Portfolio Alicia Cardete">
+            </a>

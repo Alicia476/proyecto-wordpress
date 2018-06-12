@@ -3,14 +3,10 @@
 <body class="animsition">
     <main>
         <header>
-            <!-- LOGO-->
-            <a id="logo-nav" href="#">
-                <img class="logo-projects" src="assets/img/logo2.svg" alt="Portfolio Alicia Cardete">
-            </a>
-            <!-- FIN LOGO-->
+        <a name="top-page"></a>
             <!-- NAV / MENU-->
             <div class="projects-nav">
-                <a href="<?php echo home_url('#works-page'); ?>" class="animsition-link"><img class="projects-nav__imagen" src="assets/img/flecha-izquierda.svg" alt="" style="width: 16px;"></a>
+                <a href="<?php echo home_url('#works-page'); ?>" class="animsition-link"><img class="projects-nav__imagen" src="http://portfolio.local/wp-content/uploads/2018/06/flecha-izquierda.svg" alt="" style="width: 16px;"></a>
                 <a href="<?php echo home_url('#works-page'); ?>" class="animsition-link"><p class="projects-nav__texto">Go back</p></a>
             </div>
             <!-- FIN NAV / MENU-->
@@ -64,42 +60,14 @@
                     <!-- PAGINATION-->
                     <section class="pagination">
                         <span class="pagination__old texto-small hvr-backward">
-                            <a href="#">Old project</a>
+                            <?php next_post_link('%link', 'Old project', TRUE); ?>
                         </span>
                         <span class="pagination__next texto-small hvr-forward">
-                            <a href="#">Next project</a>
+                            <?php previous_post_link('%link', 'Next project', TRUE); ?>
                         </span>
                     </section>
                     <!-- FIN PAGINATION-->
                 </div>
         </section>
-
-        <!-- Copyright-->
-        <section class="contact__footer contact__footer-proyectos col-12 texto-small">
-            <div class="contact__footer__texto texto-small">
-                <p>2018 © Alicia Cardete, Spain</p>
-            </div>
-            <div class="contact__footer__rrss">
-                <ul class="contact__footer__rrss__ul">
-                    <a href="#">
-                        <li>
-                            <img src="assets/img/logo-linkedin.svg" alt="">
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="assets/img/wordpress.svg" alt="">
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="assets/img/logo-instagram.svg" alt="">
-                        </li>
-                    </a>
-                </ul>
-            </div>
-        </section>
-        <!-- Fin Copyright-->
+        <?php get_footer(); ?>
     </main>
-
-    <?php get_footer(); ?>

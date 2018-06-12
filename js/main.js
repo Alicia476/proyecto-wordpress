@@ -33,7 +33,7 @@ $(document).ready(function() {
     scrollToAnchor("about-page");
   });
   $("#logo-nav").click(function() {
-    scrollToAnchor("landing-page");
+    scrollToAnchor("top-page");
   });
   $(".logo-projects").click(function() {
     scrollToAnchor("projects-page");

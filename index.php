@@ -5,10 +5,7 @@
 
         <!-- HEADER-->
         <header>
-            <!-- LOGO-->
-            <a id="logo-nav" href="#">
-                <img id="logo" src="http://portfolio.local/wp-content/uploads/2018/06/logo2.svg" alt="Portfolio Alicia Cardete">
-            </a>
+        <a name="top-page"></a>
             <!-- FIN LOGO-->
             <!-- NAV / MENU-->
             <nav class="landing__navegacion">
@@ -129,7 +126,7 @@
                 </div>
 
                 <div class="works__proyectos col-12 col-lg-8 col-xl-6">
-                    <div class="swiper-container wow fadeIn works__proyectos-swiper-container" data-wow-duration="1.5s" data-wow-delay=".3s" style="">
+                    <div class="swiper-container wow fadeIn works__proyectos-swiper-container" data-wow-duration="1.5s" data-wow-delay=".3s">
                         <div class="swiper-wrapper">
                             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                             <div class="works__proyectos-swiper-slide swiper-slide">
@@ -161,7 +158,7 @@
                     </div>
                 </div>
                 
-                <div class="works__letras col-lg-2 col-xl-3" style="border: 1px solid red;">
+                <div class="works__letras col-lg-2 col-xl-3">
                     <h1 class="letter-big works__k wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".3s">K</h1>
                     <h1 class="letter-big works__s wow fadeInRight" data-wow-duration=".5s" data-wow-delay=".4s">S</h1>
                 </div>
@@ -202,37 +199,7 @@
                 </section>
                 <!-- FIN COLUMNA DERECHA-->
 
-                 <!-- CONTACT COPYRIGHT-->
- <section class="contact__footer col-xl-12">
-                    <div class="contact__footer__texto texto-small">
-                        <p>2018 © Alicia Cardete, Spain</p>
-                    </div>
-                    <div class="contact__footer__rrss">
-                        <ul class="contact__footer__rrss__ul">
-                            <a href="#">
-                                <li>
-                                    <img src="assets/img/logo-linkedin.svg" alt="">
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <img src="assets/img/wordpress.svg" alt="">
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <img src="assets/img/logo-instagram.svg" alt="">
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                </section>
-                <!-- CONTACT FIN COPYRIGHT-->
-            </div>
-            <!-- CONTACT FIN ROW 1-->
-        </footer>
-        <!-- FIN CONTACT-->
+    <?php get_footer(); ?>
     </main>
 
-<?php get_footer(); ?>
 
