@@ -1,4 +1,4 @@
-<?php get_header(); the_post(); ?>
+<?php get_header(); ?>
 
 <body class="animsition" data-animsition-in-class="fade-in" data-animsition-out-class="fade-out-up">
     <main class="container-fluid">
@@ -7,7 +7,7 @@
         <header>
             <!-- LOGO-->
             <a id="logo-nav" href="#">
-                <img id="logo" src="assets/img/logo2.svg" alt="Portfolio Alicia Cardete">
+                <img id="logo" src="http://portfolio.local/wp-content/uploads/2018/06/logo2.svg" alt="Portfolio Alicia Cardete">
             </a>
             <!-- FIN LOGO-->
             <!-- NAV / MENU-->
@@ -45,7 +45,7 @@
             <div class="row landing__row justify-content-center align-items-center">
                 <!-- LANDING CONTENIDO-->
                 <section class="landing__informacion col-10 col-xl-6 offset-xl-4 wow fadeIn" data-wow-duration="2s" data-wow-delay=".5s">
-                    <h1 class="wow fadeInUp landing__informacion__h1-visible" data-wow-duration="1.2s" data-wow-delay=".5s" style="z-index: 1;">Hello</h1>
+                    <h1 class="wow fadeInUp landing__informacion__h1-visible" data-wow-duration="1.2s" data-wow-delay=".5s">Hello</h1>
                     <p>I'm Alicia, a web designer and junior frontend developer and this is my portfolio. Nice to meet you!
                         <br>
                         <br>
@@ -53,7 +53,7 @@
                         <br>
                         <a id="see-more" class="texto-small wow bounce hvr-underline-from-center" data-wow-duration="1s" data-wow-delay="1.5s" href="#">see more</a>
                     </p>
-                    <img class="position-absolute" src="./assets/img/rombos.png" alt="Portfolio de Alicia Cardete">
+                    <img class="position-absolute" src="http://portfolio.local/wp-content/uploads/2018/06/rombos.png" alt="Portfolio de Alicia Cardete">
                 </section>
                 <!-- FIN LANDING CONTENIDO-->
             </div>
@@ -100,7 +100,7 @@
                 <!-- ABOUT COLUMNA DERECHA-->
                 <section class="about__columnaderecha col-10 order-1 col-md-8 col-lg-5 col-xl-4">
                     <div class="about__columnaderecha__rectangulo wow fadeInRight" data-wow-duration="1s" data-wow-delay=".2s"></div>
-                    <img class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" src="./assets/img/foto-alicia.jpg" alt="Alicia Cardete">
+                    <img class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s" src="http://portfolio.local/wp-content/uploads/2018/06/foto-alicia.jpg" alt="Alicia Cardete">
                     <section class="about__columnaderecha__letras letter-big wow fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="about__columnaderecha__a  position-absolute draggable hvr-bob">A</div>
                         <div class="about__columnaderecha__b position-absolute draggable hvr-bob">B</div>
@@ -116,47 +116,52 @@
         <!-- FIN ABOUT-->
 
         <!-- WORKS -->
+        <?php query_posts( 'cat=proyectos' ); ?>
+
         <a name="works-page"></a>
         <section id="works-page" class="works">
-            <div class="works__wrapper row justify-content-center align-items-center">
-                <div class="works__letras col-md-2 col-lg-2 col-xl-2">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="works__letras col-lg-2 col-xl-3">
                     <h1 class="letter-big works__w wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".2s">W</h1>
                     <h1 class="letter-big works__o wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".3s">O</h1>
                     <h1 class="letter-big works__r wow fadeInRight" data-wow-duration=".5s" data-wow-delay=".4s">R</h1>
                 </div>
-                <section class="works__proyectos col-12 col-sm-8 col-md-10 col-lg-6 col-xl-6 wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
-                    <div class="swiper-container wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s">
+
+                <div class="works__proyectos col-12 col-lg-8 col-xl-6">
+                    <div class="swiper-container wow fadeIn works__proyectos-swiper-container" data-wow-duration="1.5s" data-wow-delay=".3s" style="">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="assets/img/SARAH mock.png" alt="">
+                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                            <div class="works__proyectos-swiper-slide swiper-slide">
+                                <div class="row">
+                                    <div class="works__proyectos-img col-12">
+                                        <a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail( 'large' ); ?></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="works__proyectos-texto">
+                                        <h1 class="titulo-mediano"><a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h1>
+                                        <div class="justify-content-center">
+                                            <div class="col-11">
+                                                <p><?php the_excerpt() ?></p>
+                                            </div>
+                                        </div>
+                                        <a class="texto-small animsition-link hvr-underline-from-center" data-animsition-out-class="fade-out-up" data-animsition-out-duration="800"
+                                            href="<?php the_permalink() ?>">
+                                            <b>see project</b>
+                                        </a>
+                                    </div>
+                                </div>   
                             </div>
-                            <div class="swiper-slide">
-                                <img src="assets/img/wild forest.png" alt="">
-                            </div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
+                            <?php endwhile; wp_reset_postdata(); endif; ?>
                         </div>
                         <!-- Add Arrows -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="works__proyectos-texto" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; ">
-                        <h1 class="titulo-mediano">Project's name</h1>
-                        <div class="row justify-content-center">
-                            <div class="col-11">
-                                <p>Have you ever wondered if what you know about herbal breast enlargement is accurate? Consider
-                                    the following paragraphs and compare what you know to the latest info on herbal breast
-                                    enlargement</p>
-                            </div>
-                        </div>
-                        <a class="texto-small animsition-link hvr-underline-from-center" data-animsition-out-class="fade-out-up" data-animsition-out-duration="800"
-                            href="proyectos.html">
-                            <b>see project</b>
-                        </a>
-                    </div>
-                </section>
-                <div class="works__letras col-md-2 col-lg-2 col-xl-2">
+                </div>
+                
+                <div class="works__letras col-lg-2 col-xl-3" style="border: 1px solid red;">
                     <h1 class="letter-big works__k wow fadeInLeft" data-wow-duration=".5s" data-wow-delay=".3s">K</h1>
                     <h1 class="letter-big works__s wow fadeInRight" data-wow-duration=".5s" data-wow-delay=".4s">S</h1>
                 </div>

@@ -10,8 +10,8 @@
             <!-- FIN LOGO-->
             <!-- NAV / MENU-->
             <div class="projects-nav">
-                <a href="index.html#cworks-page" class="animsition-link"><img class="projects-nav__imagen" src="assets/img/flecha-izquierda.svg" alt="" style="width: 16px;"></a>
-                <a href="index.html#works-page" class="animsition-link"><p class="projects-nav__texto">Go back</p></a>
+                <a href="<?php echo home_url('#works-page'); ?>" class="animsition-link"><img class="projects-nav__imagen" src="assets/img/flecha-izquierda.svg" alt="" style="width: 16px;"></a>
+                <a href="<?php echo home_url('#works-page'); ?>" class="animsition-link"><p class="projects-nav__texto">Go back</p></a>
             </div>
             <!-- FIN NAV / MENU-->
         </header>
@@ -20,53 +20,38 @@
         <section class="projects">
             <div class="row projects__row justify-content-center align-items-center">
                 <div class="col-8 col-sm-10 col-md-8 col-lg-10 col-xl-12 projects__titulo wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">
-                    <h1 class="letter-big">Sarah J.Mass</h1>
+                    <h1 class="letter-big"><?php the_title(); ?></h1>
                 </div>
                 <div class="col-11 col-sm-10 col-md-10 col-lg-8 col-xl-6 projects__informacion wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
                     <div class="projects__informacion__mockup">
-                        <img src="assets/img/SARAH mock.png" alt="">
+                        <?php the_post_thumbnail ( 'large' ); ?>
                     </div>
                     <article class="projects__informacion__texto">
-                        <br>
-                        <p>What is the loop of Creation? How is there something from nothing? In spite of the fact that it is
-                            impossible to prove that anything exists beyond one’s perception since any such proof would involve
-                            one’s perception (I observed it, I heard it, I thought about it, I calculated it, and etc.),
-                            science deals with a so-called objective reality “out there,” beyond one’s perception professing
-                            to describe Nature objectively (as if there was a Nature or reality external to one’s perception).</p>
-                        <br>
-                        <p>The shocking impact of Matrix was precisely the valid possibility that what we believed to be reality
-                            was but our perception; however, this was presented through showing a real reality wherein the
-                            perceived reality was a computer simulation. Many who toy with the idea that perhaps, indeed,
-                            we are computer simulations, deviate towards questions, such as, who could create such software
-                            and what kind of hardware would be needed for such a feat. </p>
-                        <br>
-                        <p>Although such questions assume that reality is our perception, they also axiomatically presuppose
-                            the existence of an objective deterministic world “out there” that nevertheless must be responsible
-                            for how we perceive our reality. This is a major mistake emphasizing technology and algorithms
-                            instead of trying to discover the nature of reality and the structure of creation. </p>
-                        <br>
-                        
-                    </article>
-                    <a href="#" class="projects__informacion__enlace hvr-underline-from-center">Visit project</a>
+                        <?php the_content(); ?>
+                    </article><br>
+                    <a href="<?php the_field('proyectos-enlace'); ?>" class="projects__informacion__enlace hvr-underline-from-center">Visit project</a>
 
                 </div>
                 <div class="col-xl-4 projects__imagenderecha wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
-                    <img src="assets/img/Landing Sarah J.Maas.png" alt="">
+                    <?php if( get_field('proyectos-mockup') ): ?>
+	                <img src="<?php the_field('proyectos-mockup'); ?>" />
+                    <?php endif; ?>
                 </div>
 
                 <!-- TOCAPELOTAS SLIDER -->
                 <div class="col-12 col-sm-12 col-md-10 col-xl-12" style="display: flex; justify-content: center; align-items: center;">
                     <div class="swiper-container projects__swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="assets/img/sarah-project-1.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/img/sarah-project-1.png" alt="">
-                            </div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
+                            <?php 
+                                $images = get_field('proyectos-galeria');
+                                if( $images ): ?>
+                                    <?php foreach( $images as $image ): ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                            <!-- <p><?php echo $image['caption']; ?></p> -->
+                                        </div>
+                                    <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         <!-- Add Arrows -->
                         <div class="swiper-button-next"></div>

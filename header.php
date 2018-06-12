@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="<?php bloginfo ( 'stylesheet_url' ); // Ruta a la hoja de estilos style.css ?>">
         <link rel="stylesheet" type="text/css" href="<?php bloginfo ( 'template_url' ); ?>/css/animate.css">
         <link rel="stylesheet" href="<?php bloginfo ( 'template_url' ); ?>/css/hover.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+        <link rel="stylesheet" href="<?php bloginfo ( 'template_url' ); ?>/css/swiper.min.css">
         <link href="<?php bloginfo ( 'template_url' ); ?>/css/animsition.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="<?php bloginfo ( 'template_url' ); ?>/css/bootstrap-grid.min.css">
@@ -18,5 +18,5 @@
         <!-- // Scripts a cargar en el head ?> -->
        
 
-        <?php wp_head(); ?>
+ 
     </head>

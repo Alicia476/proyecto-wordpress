@@ -208,7 +208,7 @@ a {
 
 /*--- Landing Page Informacion ---*/
 .landing {
-  background-image: url(/assets/img/background-pink.png);
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/background-pink.png);
 }
 .landing__row {
   padding: 21.42em 0 21.42em 0;
@@ -224,6 +224,7 @@ a {
   font-size: 8.57em; 
   letter-spacing: 35px;
   font-weight: 600;
+  z-index: 1; 
 }
 .landing__informacion img {
   top: 10px;
@@ -239,7 +240,7 @@ a {
 
 /*------------ ABOUT ------------ */
 .about {
-  background-image: url(/assets/img/background2.jpg);
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/background2.jpg);
   width: 100%;
 }
 .about__row {
@@ -318,47 +319,55 @@ background-color: #EFDDE3;
 /*------------ WORKS ------------ */
 .works {
   padding: 14.28em 0 14.28em 0;
+  height: 107.14em;
   background-color: white; 
-  background-image: url(/assets/img/background-triangulos.png);
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/background-triangulos.png);
   background-position: center;
-  align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  flex-wrap: wrap;
 }
-
 .works__proyectos {
-  display: flex; 
-  justify-content: center; 
+  display:flex; 
   align-items: center; 
+  justify-content: center; 
   flex-wrap: wrap;
 }
-
-.works__proyectos h1 {
-  margin-top: 20px; 
+.works__proyectos-swiper-container {
+  height: auto!important;
 }
-.works__proyectos p {
-  margin-bottom: 40px; 
+.works__proyectos-swiper-slide {
+  display: flex; 
+  flex-direction: column;
 }
-
+.works__proyectos-img{
+  text-align: center;
+}
+.works__proyectos-img a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.works__proyectos-texto{ 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+flex-direction: column;
+} 
 .works__w, .works__o, .works__r, .works__k, .works__s {
   position: absolute;
   font-size: 14.28em; 
 }
 .works__w {
   bottom: 380px; 
-  left: -50px; 
+  left: 100px; 
 }
 .works__o {
   bottom: 200px; 
-  left: 100px; 
+  left: 220px; 
 }
 .works__r {
-  bottom: 80px; 
-  left: -30px; 
+  bottom: 30px; 
+  left: 100px; 
 }
 
 .works__k {
@@ -394,17 +403,19 @@ p.works__columnaderecha__see {
 }
 .swiper-slide img {
   width: 90%;
+  height: auto; 
   cursor: pointer;
+  margin: 30px; 
 }
 
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-  background-image: url(/assets/img/galon-derecho.svg)!important;
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/galon-derecho.svg)!important;
   right: 0!important;
   left: auto;
 }
 
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  background-image: url(/assets/img/galon-izquierdo.svg)!important;
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/galon-izquierdo.svg)!important;
   left: 0!important;
   right: auto;
 }
@@ -419,7 +430,7 @@ p.works__columnaderecha__see {
 
 /*------------ CONTACT ------------ */
 .contact {
-  background-image: url(/assets/img/background5.jpg);
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/background5.jpg);
   padding: 14.28em 0 0 0;
   position: relative;
 }
@@ -523,7 +534,7 @@ opacity: .5;
 }
 
 .projects {
-  background-image: url(/assets/img/background-proyectos.png);
+  background-image: url(http://portfolio.local/wp-content/uploads/2018/06/background-proyectos.png);
   background-repeat: no-repeat;
   background-position: left 20%;
   display: flex;
@@ -546,6 +557,7 @@ opacity: .5;
 }
 .projects__informacion__mockup img {
   width: 70%;
+  height: auto;
 }
 .projects__informacion {
   padding: 60px;
@@ -614,21 +626,18 @@ opacity: .5;
   }
   .works__w {
     top: -620px; 
-    left: -50px; 
   }
   .works__o {
     top: -420px; 
-    left: 40px; 
   }
   .works__r {
     top: -250px;
-    left: -50px; 
   }
   .works__k {
     left: 0px; 
   }
   .works__s {
-    left: 100px; 
+    left: 50px; 
     top: 80px; 
   }
   .works__proyectos-texto {
@@ -739,7 +748,6 @@ opacity: .5;
   .projects__informacion {
     margin-bottom: -100px;
   }
-
  
 }
 
@@ -815,14 +823,8 @@ opacity: .5;
   }
 
   .works{
-    padding-top: 0;
+    padding: 0;
   }
-
-  .works__wrapper {
-    overflow: hidden;
-  }
-  
-  
 }
 
 @media screen and (max-width:575px)   {
@@ -839,8 +841,11 @@ opacity: .5;
   }
   .works__proyectos-texto h1 {
     letter-spacing: 2px;
+    margin-top: 20px; 
   }
-
+  .works {
+    height: 80.14em;
+  } 
 }
 @media screen and (max-width: 414px)  {
   body  {
@@ -852,6 +857,13 @@ opacity: .5;
   .projects__informacion {
     margin-bottom: -200px;
   }
+  .works__proyectos-texto h1 {
+    font-size: 2em;
+  }
+  .works {
+    height: 70.14em;
+  } 
+
 }
 @media screen and (max-width:360px)   {
   .contact__columnader__info h2.titulo-mediano {
@@ -880,5 +892,10 @@ opacity: .5;
   .pagination {
     margin-top: -8.71em; 
   }
+  .works__proyectos-texto h1 {
+    font-size: 1.5em;
+  }
+
+  
   
 }
