@@ -116,11 +116,11 @@
                                 <div class="row">
                                     <div class="works__proyectos-texto">
                                         <h1 class="titulo-mediano"><a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h1>
-                                        <div class="justify-content-center">
+                                        <!-- <div class="justify-content-center">
                                             <div class="col-11">
                                                 <p><?php the_excerpt() ?></p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <a class="texto-small animsition-link hvr-underline-from-center" data-animsition-out-class="fade-out-up" data-animsition-out-duration="800"
                                             href="<?php the_permalink() ?>">
                                             <b>see project</b>
