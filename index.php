@@ -121,7 +121,7 @@
                                                 <p><?php the_excerpt() ?></p>
                                             </div>
                                         </div> -->
-                                        <a class="texto-small animsition-link hvr-underline-from-center" data-animsition-out-class="fade-out-up" data-animsition-out-duration="800"
+                                        <a class="texto-small animsition-link hvr-underline-from-center works__proyectos-see" data-animsition-out-class="fade-out-up" data-animsition-out-duration="800"
                                             href="<?php the_permalink() ?>">
                                             <b>see project</b>
                                         </a>

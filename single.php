@@ -38,7 +38,7 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- TOCAPELOTAS SLIDER -->
+                <!-- SLIDER -->
                 <div class="col-12 col-sm-12 col-md-10 col-xl-12" style="display: flex; justify-content: center; align-items: center;">
                     <div class="swiper-container projects__swiper-container">
                         <div class="swiper-wrapper">
@@ -47,7 +47,7 @@
                                 if( $images ): ?>
                                     <?php foreach( $images as $image ): ?>
                                         <div class="swiper-slide">
-                                            <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                            <img class="single-galeria" src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
                                             <!-- <p><?php echo $image['caption']; ?></p> -->
                                         </div>
                                     <?php endforeach; ?>
