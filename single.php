@@ -15,17 +15,21 @@
         <a name="projects-page"></a>
         <section class="projects">
             <div class="row projects__row justify-content-center align-items-center">
-                <div class="col-8 col-sm-10 col-md-8 col-lg-10 col-xl-12 projects__titulo wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">
+                <!-- <div class="col-8 col-sm-10 col-md-8 col-lg-10 col-xl-12 projects__titulo wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">
                     <h1 class="letter-big"><?php the_title(); ?></h1>
-                </div>
+                </div> -->
                 <div class="col-11 col-sm-10 col-md-10 col-lg-8 col-xl-6 projects__informacion wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+                    <div class="projects__titulo wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">
+                    <h1><?php the_title(); ?></h1>
+                </div>
                     <div class="projects__informacion__mockup">
                         <?php the_post_thumbnail ( 'large' ); ?>
                     </div>
                     <article class="projects__informacion__texto">
                         <?php the_content(); ?>
                     </article><br>
-                    <a href="<?php the_field('proyectos-enlace'); ?>" class="projects__informacion__enlace hvr-underline-from-center">Visit project</a>
+                    <div class="projects__informacion__enlace"><a href="<?php the_field('proyectos-enlace'); ?>" class="hvr-underline-from-center">
+                    Visit project</a></div>
 
                 </div>
                 <div class="col-xl-4 projects__imagenderecha wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
